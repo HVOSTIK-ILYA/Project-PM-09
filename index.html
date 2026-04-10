@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новосибирскэнергосбыт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page__body">
+    <header>
+        <img class="logo" src="images/Лого + название.png">
+        <button class="button" id="openLoginForm" onclick="openPopup('authChoice')">Личный кабинет</button>
+    </header>
+    <main>
+        <div class="ekran_1">
+            <div class="main__text">
+                <h1 class="text_1">В мобильном приложении «Платосфера» теперь доступна новая услуга — «Автоплатеж за свет»</h1>
+                <img class="img_1" src="images/Avtoplatezh1 1.png">
+            </div>
+            <div class="main__menu">
+                <button id="menu__button" class="b1" onclick="openPopup('menuFiz')">Для физических лиц</button>
+                <button id="menu__button" class="b2" onclick="openPopup('menuPower')">Для представителей органов власти</button>
+                <button id="menu__button" class="b3" onclick="openPopup('menuLegal')">Для юридических лиц</button>
+                <button id="menu__button" class="b4" onclick="openPopup('menuSfera')">Свера энергии</button>
+            </div>
+        </div>
+        <div class="ekran_2">
+            <div class="main__text_2">
+                <div class="main__text_2_1">
+                    <h1 class="text_2">Оплата по адресу</h1>
+                    <img class="img_2" src="images/Adres.png">
+                </div>
+                <div class="sub_menu">
+                    <div class="sub__menu">
+                        <div class="column">
+                            <img class="column_img" src="images/Group punkt.png">
+                            <p class="column_text">Населенный пункт, улица (микрорайон, квартал, ДНП, иное), номер дома</p>
+                            <input class="input" type="text" placeholder="Введите населенный пукнт">
+                        </div>
+                        <div class="column">
+                            <img class="column_img" src="images/10.png">
+                            <p class="column_text">Номер квартиры (если есть)</p>
+                            <input class="input" type="text" placeholder="Введите номер квартиры">
+                        </div>
+                    </div>
+                    <div class="button__main_type">
+                        <button>Оплатить</button> 
+                    </div> 
+                </div>
+            
+            </div>
+        </div>
+        <div class="ekran_3">
+            <div class="main__text_3">
+                <div class="main__text_2_1">
+                    <h1 class="text_2">По лицевому счету</h1>
+                    <img class="img_2" src="images/Group 5.png">
+                </div>
+                <div class="sub_menu">
+                    <div class="sub__menu">
+                        <div class="column">
+                            <img class="column_img" src="images/Map_light.png">
+                            <p class="column_text">Район</p>
+                            <input class="input" type="text" placeholder="Введите населенный пукнт">
+                        </div>
+                        <div class="column">
+                            <img class="column_img" src="images/File_dock_search_light.png">
+                            <p class="column_text">Номер лицевого счета</p>
+                            <input class="input" type="text" placeholder="0000000">
+                        </div>
+                    </div>
+                    <div class="button__main_type">
+                        <button>Оплатить</button> 
+                    </div> 
+                </div>
+            
+            </div>
+        </div>    
+    </main>
+    <!-- Затемнение фона (оверлей) -->
+<div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
+
+<!-- Попапы для кнопок главного меню -->
+<div id="menuFizPopup" class="popup popup--menu">
+    <div class="popup-content popup-content--menu">
+        <h2 class="popup--menu__title">Для физических лиц мы предоставляем:</h2>
+        <ol class="popup--menu__list">
+            <li>Детализацию счета</li>
+            <li>Поддержку если звонят по чужому адресу?</li>
+        </ol>
+    </div>
+</div>
+<div id="menuPowerPopup" class="popup popup--menu">
+    <div class="popup-content popup-content--menu">
+        <h2 class="popup--menu__title">Для представителей органов власти мы предоставляем:</h2>
+        <ol class="popup--menu__list">
+            <li>Обещанный платеж</li>
+            <li>Электронный документооборот</li>
+            <li>Калькулятор расчета стоимости внедрения ФСКУЭ</li>
+        </ol>
+    </div>
+</div>
+<div id="menuLegalPopup" class="popup popup--menu">
+    <div class="popup-content popup-content--menu">
+        <h2 class="popup--menu__title">Для юридических лиц мы предоставляем:</h2>
+        <ol class="popup--menu__list">
+            <li>Заключить договор</li>
+            <li>Личный кабинет</li>
+            <li>Направить обращение</li>
+            <li>Установить электрозарядную станцию</li>
+        </ol>
+    </div>
+</div>
+<div id="menuSferaPopup" class="popup popup--menu">
+    <div class="popup-content popup-content--menu">
+        <h2 class="popup--menu__title">В сфере энергии мы предоставляем:</h2>
+        <ol class="popup--menu__list">
+            <li>Направление обращения от участника СППС</li>
+            <li>Размещение рекламы в мобильном приложении «Платосфера»</li>
+            <li>Система платежей и переводов «Сфера энергии»</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Попап выбора: Вход / Регистрация -->
+<div id="authChoicePopup" class="popup popup--auth-choice">
+    <div class="popup-content popup-content--auth-choice">
+        <h2 class="popup__title popup__title--auth">Вход/регистрация в личный кабинет</h2>
+        <div class="auth-choice__buttons">
+            <button type="button" class="auth-choice__btn auth-choice__btn--primary" onclick="openPopupFromChoice('register')">Регистрация</button>
+            <button type="button" class="auth-choice__btn auth-choice__btn--secondary" onclick="openPopupFromChoice('login')">Вход</button>
+        </div>
+    </div>
+</div>
+
+<!-- Попап регистрации -->
+<div id="registerPopup" class="popup popup--register">
+    <div class="popup-content">
+        <span class="close" onclick="closeAllPopups()">&times;</span>
+        <h2 class="popup__title">Регистрация</h2>
+        
+        <!-- Форма регистрации -->
+        <form method="POST" action="register.php" id="registerForm">
+            <div class="form-group">
+                <label>Логин</label>
+                <input type="text" name="username" placeholder="Логин" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" name="password" placeholder="Пароль" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Номер лицевого счета</label>
+                <input type="text" name="account_number" placeholder="Номер лицевого счета" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Эл. почта</label>
+                <input type="email" name="email" placeholder="Эл. почта" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Номер телефона</label>
+                <input type="tel" name="phone" placeholder="Номер телефона" required>
+            </div>
+            
+            <button type="submit" class="popup__submit">Зарегистрироваться</button>
+        </form>
+        
+        <!-- Здесь будем показывать результат -->
+        <div id="registerResult"></div>
+    </div>
+</div>
+
+<!-- Попап входа -->
+<div id="loginPopup" class="popup popup--login">
+    <div class="popup-content">
+        <span class="close" onclick="closeAllPopups()">&times;</span>
+        <h2 class="popup__title">Вход</h2>
+        <form method="POST" action="login.php" id="loginForm">
+            <div class="form-group">
+                <label>Логин</label>
+                <input type="text" name="username" placeholder="Логин" required>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" name="password" placeholder="Пароль" required>
+            </div>
+            <button type="submit" class="popup__submit">Войти</button>
+        </form>
+        <div id="loginResult"></div>
+    </div>
+</div>
+
+<script src="popups.js"></script>
+</body>
+</html>

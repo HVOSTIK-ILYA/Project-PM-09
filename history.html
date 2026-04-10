@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>История онлайн плятежей</h1>
+        <table>
+            <?php if ($user) { ?>
+                <!-- Строка с именем -->
+                <tr>
+                    <td>Имя:</td>
+                    <td><?php echo $user['name']; ?></td>
+                </tr>
+                
+                <!-- Строка с email -->
+                <tr>
+                    <td>Email:</td>
+                    <td><?php echo $user['email']; ?></td>
+                </tr>
+                
+                <!-- Строка с возрастом -->
+                <tr>
+                    <td>Возраст:</td>
+                    <td><?php echo $user['age']; ?></td>
+                </tr>
+                
+                <!-- Строка с городом -->
+                <tr>
+                    <td>Город:</td>
+                    <td><?php echo $user['city']; ?></td>
+                </tr>
+                
+                <!-- Строка с телефоном -->
+                <tr>
+                    <td>Телефон:</td>
+                    <td><?php echo $user['phone']; ?></td>
+                </tr>
+                
+                <!-- Строка с датой регистрации -->
+                <tr>
+                    <td>Дата регистрации:</td>
+                    <td><?php echo $user['registration_date']; ?></td>
+                </tr>
+                
+            <?php } else { ?>
+                <tr>
+                    <td colspan="2">Пользователь не найден</td>
+                </tr>
+            <?php } ?>
+        </table>
+    </main>
+</body>
+</html>
