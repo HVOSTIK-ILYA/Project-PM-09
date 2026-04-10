@@ -1,0 +1,735 @@
+/* Универсальный селектор (*) применяет стили ко ВСЕМ элементам на странице */
+* {
+    margin: 0; /* Убирает внешние отступы у всех элементов (браузеры часто добавляют их по умолчанию) */
+    padding: 0; /* Убирает внутренние отступы у всех элементов */
+    box-sizing: border-box; /* Заставляет браузер учитывать padding и border в ширине и высоте элемента (чтобы верстка не "разваливалась") */
+}
+/* Стили для тега <body> - основной контейнер страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Устанавливает шрифт: сначала Segoe UI (красивый системный), если нет - запасные варианты */
+    background-color: white; /* Светло-серый с голубым оттенком фон страницы (как на дизайне) */
+    color: #1e293b; /* Темно-сине-серый цвет текста по умолчанию (не чисто черный, чтобы глаза меньше уставали) */
+    line-height: 1.5; /* Межстрочный интервал (делает текст более читабельным) */
+}
+
+/* Шапка сайта (header) */
+
+/* Стили для тега <header> - верхняя часть страницы */
+header {
+    display: flex; /* Включает Flexbox - современный способ раскладки элементов */
+    justify-content: space-between; /* Распределяет элементы по краям: логотип слева, кнопка справа */
+    align-items: center; /* Выравнивает элементы по вертикали по центру */
+    padding: 20px 60px; /* Внутренние отступы: 20px сверху/снизу, 60px слева/справа */
+    background-color: #ffffff; /* Белый фон шапки */
+}
+
+/* Стили для логотипа (класс .logo) */
+.logo {
+    width: 496px;
+    height: 49px; /* Фиксированная высота логотипа (ширина подстроится автоматически, чтобы сохранить пропорции) */
+    width: auto; /* Автоматическая ширина, чтобы не искажать изображение */
+}
+
+/* Кнопка "Личный кабинет" (класс .button) */
+
+/* Стили для элемента с классом "button" (наша кнопка входа) */
+.button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: #c0c0c0;
+}
+
+/* Основной контент */
+
+/* Стили для тега <main> - главная часть страницы */
+.ekran_1{
+    background-color: white;
+    
+}
+
+/* Заголовок (главная новость) - класс .text_1 */
+.main__text{
+    height: 510px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    border-style: solid;
+    border-top: 1px solid #000000;
+    border-bottom: 0px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    padding: 190px;
+    align-items: center;
+}
+.main__text_2 > .main__text_2_1,
+.main__text_2 > .sub_menu {
+    flex: 1; /* равное пространство */
+    min-width: 0; /* предотвращаем чрезмерный рост из‑за содержимого */
+    flex-wrap: wrap; /* разрешаем перенос элементов внутри этих блоков при необходимости (для адаптивности) */
+}
+/* Стили для элемента с классом "text_1" (наш большой заголовок) */
+.text_1 {
+    width: 630px;
+    font-size: 32px; /* Крупный размер шрифта 32 пикселя для заголовка */
+    font-weight: 700; /* Жирное начертание (700 соответствует bold) */
+    color: #000000; /* Очень темный синий цвет (чуть насыщеннее основного текста) */
+    margin-bottom: 30px; /* Отступ снизу 30px, чтобы отделить заголовок от картинки */
+    line-height: 1.3; /* Немного уменьшенный межстрочный интервал для заголовка (чтобы было плотнее) */
+    max-width: 900px; /* Ограничиваем ширину заголовка, чтобы он не был слишком широким и легче читался */
+}
+
+/* Изображение - класс .img_1 */
+
+/* Стили для элемента с классом "img_1" (наша картинка) */
+.img_1 {
+    width: 50%; /* Картинка занимает 100% ширины родительского контейнера (адаптивность) */
+    max-width: 687px; /* Но не шире 1000px, чтобы на огромных экранах не было гигантского фото */
+    max-height: 456px; /* Максимальная высота 400px, чтобы картинка не была слишком высокой */
+    border-radius: 16px; /* Скругление углов 16px (современный тренд дизайна) */
+    margin-bottom: 40px; /* Отступ снизу 40px, чтобы отделить картинку от кнопок */
+    display: block; /* Картинка по умолчанию inline, меняем на block чтобы margin работал корректно */
+}
+
+/* Контейнер для кнопок (плитки услуг) */
+
+/* Стили для кнопок-категорий (Для физических лиц и т.д.) */
+.main__menu{
+    display: flex;
+    flex-direction: row;
+    
+}
+/* Стили для всех тегов <button> внутри <main> */
+main button {
+    
+    /* Сбрасываем стандартные стили кнопки браузера */
+    background-color: white; /* Белый фон */
+    
+    /* Типографика */
+    font-size: 18px; /* Размер шрифта 18px (чуть крупнее обычного) */
+    font-weight: 600; /* Полужирный текст */
+    color: #000000; /* Темно-синий цвет текста */
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px; /* Выравнивание текста по левому краю (обычно в кнопках по центру) */
+    
+    /* Размеры и отступы */
+    width: 100%; /* Ширина 100% от родителя (чтобы все кнопки были одинаковой ширины) */
+    max-width: 465px; /* Но не шире 400px (чтобы на широких экранах не были слишком большими) */
+    /* Анимация и взаимодействие */
+    cursor: pointer; /* Курсор-рука */
+    transition: all 0.2s ease; /* Плавное изменение всех свойств за 0.2 секунды */
+    
+}
+.b1{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+.b2{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 0px solid #000000;
+    border-right: 1px solid #000000;
+}
+.b3{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 0px solid #000000;
+    border-right: 1px solid #000000;
+}
+.b4{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 0px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+/* Эффект при наведении на кнопки-категории */
+main button:hover {
+    background-color: #c0c0c0;
+    border-color: #ffffff;
+    box-shadow: 0 8px 15px rgba(0, 63, 235, 0.1); /* Увеличиваем тень с синим оттенком */
+}
+/* Основной контейнер страницы/блока */
+
+/* Верхняя строка с заголовком и картинкой */
+.ekran_2 {
+    background-image: url(images/Экран\ 4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__text_2 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствия HTML */
+    display: flex; /* Включаем Flexbox для выравнивания элементов в ряд */ /* Размещаем заголовок слева, а картинку справа (space-between создает между ними максимальное расстояние) */
+    align-items: center; /* Выравниваем заголовок и картинку по вертикали по центру (как на скриншоте) */
+    margin:  30px;/* Отступ снизу перед блоком с адресом */
+    border: solid #000000 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 750px;
+    flex-grow: 1;
+}
+
+/* Устанавливаем одинаковую ширину для двух основных частей внутри main__text_2 */
+.main__text_2 > .main__text_2_1,
+.main__text_2 > .sub_menu {
+    flex: 1; /* равное пространство */
+    min-width: 0; /* предотвращаем чрезмерный рост из‑за содержимого */
+    flex-wrap: wrap; /* разрешаем перенос элементов внутри этих блоков при необходимости (для адаптивности) */
+}
+.main__text_2_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* центрируем внутренние блоки по горизонтали */
+}
+.text_2 {
+    margin-bottom: 10px;
+    font-size: 70px;
+    color: #000000;
+}
+.sub_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* центрируем внутренние блоки по горизонтали */
+    border: 1px solid #000000;
+}
+.sub__menu {
+    display: flex;               /* row по‑умолчанию */
+    flex-direction: row;
+    justify-content: center;     /* двигает колонки в середину по горизонтали */
+    gap: 20px;
+    height: 646px;
+}
+.column {
+    align-items: center;
+    display: flex; /* Включаем Flexbox для колонки */
+    flex-direction: column;
+    justify-content: space-between; /* разнесём верхний текст и поле по вертикали */
+    flex: 1; /* Колонка занимает доступное пространство */
+    max-width: 444px;
+    margin: 10px;
+    padding-top: 30px;
+    gap: 1px; /* равное расстояние между картинкой, текстом и полем */
+    flex-grow: 1; /* Добавляем отступы слева и справа, чтобы колонки не прилипали к краям */
+}
+
+/* Инпут тянем вниз, чтобы все на одном уровне */
+
+.input{
+    border-style: dotted black 1px;
+    margin-bottom: 30px;
+}
+.column_text {
+    text-align: center;
+    font-size: 30px;
+    color: #000000;
+}
+.column_img {
+    width: 230px;
+    height: 230px;
+}
+
+
+
+/* Стили для полей ввода */
+.input {
+    width: 100%; /* Поле занимает всю ширину родительской колонки */
+    padding: 12px 15px; /* Внутренние отступы для комфортного ввода текста */
+    border: 2px dotted #000000; /* Серая рамка */
+    border-radius: 8px; /* Скругленные углы, как часто бывает в современных интерфейсах */
+    font-size: 16px; /* Размер текста внутри поля */
+    box-sizing: border-box; /* Важно! Учитываем padding в общей ширине, чтобы поле не вылезало за пределы max-width */
+    margin-top: 5px; /* Небольшой отступ сверху от текста */
+    background-color: transparent; /* делаем поле прозрачным */
+}
+
+/* Контейнер для кнопки, чтобы выровнять её по нижнему краю */
+.button__main_type {
+    display: flex; /* Включаем Flexbox */
+    align-items: flex-end; /* Выравниваем содержимое (кнопку) по нижнему краю этого контейнера */
+    height: 100%; /* Контейнер растягивается на всю высоту, чтобы align-items работал корректно относительно sub_menu */
+    margin-bottom: 10px;
+}
+
+/* Стили для самой кнопки "Оплатить" */
+.button__main_type button {
+    background-color: #000000; /* Синий цвет фона, как на скриншоте (королевский синий) */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    padding: 15px 40px; /* Вертикальные и горизонтальные отступы внутри кнопки */
+    font-size: 24px; /* Крупный текст на кнопке */
+    font-weight: bold; /* Жирное начертание */
+    border-radius: 15px; /* Сильное скругление, чтобы кнопка была овальной (можно подобрать другое значение под дизайн) */
+    cursor: pointer; /* Меняем курсор на указатель при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+    white-space: nowrap; /* Запрещаем перенос текста на кнопке на новую строку */
+}
+
+/* Эффект при наведении на кнопку для интерактивности */
+.button__main_type button:hover {
+    background-color: #c0c0c0;
+}
+
+.ekran_3{
+    background-image: url(images/Экран/5.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main__text_3 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствия HTML */
+    display: flex; /* Включаем Flexbox для выравнивания элементов в ряд */ /* Размещаем заголовок слева, а картинку справа (space-between создает между ними максимальное расстояние) */
+    flex-direction: row-reverse;
+    align-items: center; /* Выравниваем заголовок и картинку по вертикали по центру (как на скриншоте) */
+    margin: 30px;/* Отступ снизу перед блоком с адресом */
+    border: solid #000000 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 750px;
+    flex-grow: 1;
+}
+
+/* Устанавливаем одинаковую ширину для двух основных частей внутри main__text_2 */
+.main__text_3 > .main__text_2_1,
+.main__text_3 > .sub_menu {
+    flex: 1; /* равное пространство */
+    min-width: 0; /* предотвращаем чрезмерный рост из‑за содержимого */
+    flex-wrap: wrap; /* разрешаем перенос элементов внутри этих блоков при необходимости (для адаптивности) */
+}
+/* Адаптивность для мобильных устройств */
+
+/* Медиа-запрос: стили применятся только когда ширина экрана 768px или меньше */
+@media (max-width: 768px) {
+    
+    /* Уменьшаем отступы в шапке для мобильных */
+    header {
+        padding: 15px 20px; /* Меньшие отступы: 15px сверху/снизу, 20px по бокам */
+    }
+    
+    /* Уменьшаем отступы в основном контенте */
+    main {
+        padding: 0 20px; /* Убираем внутренние отступы по бокам до 20px */
+    }
+    
+    /* Уменьшаем размер заголовка */
+    .text_1 {
+        font-size: 24px; /* С 32px уменьшаем до 24px */
+    }
+    
+    /* Кнопки занимают всю доступную ширину */
+    main button {
+        max-width: 100%; /* Убираем ограничение в 400px, кнопки растягиваются на всю ширину */
+        padding: 16px 24px; /* Немного уменьшаем внутренние отступы */
+    }
+}
+/* Затемнение фона */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Попап */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1001;
+    max-width: 400px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Попапы меню (Для физических лиц, органов власти, юридических лиц, Сфера энергии) */
+.popup--menu {
+    background-color: #000;
+    border-radius: 8px;
+    padding: 28px 24px;
+    width: 1512px;
+    height: 794px;
+    max-width: 95vw;
+    max-height: 90vh;
+    box-sizing: border-box;
+}
+
+.popup--menu .popup-content--menu {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 48px 56px 48px 48px;
+    box-sizing: border-box;
+}
+
+.popup--menu__close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 22px;
+}
+
+.popup--menu__close:hover {
+    color: #fff;
+}
+
+.popup--menu__title {
+    color: #fff;
+    font-size: clamp(22px, 4.5vh + 1.5vw, 72px);
+    font-weight: bold;
+    margin: 0 36px 0 0;
+    line-height: 1.3;
+    flex: 0 1 auto;
+}
+
+.popup--menu__list {
+    color: #fff;
+    font-size: clamp(18px, 3.5vh + 1vw, 56px);
+    line-height: 1.5;
+    margin: 0;
+    padding-left: 1.2em;
+    flex: 0 1 auto;
+}
+
+.popup--menu__list li {
+    margin-bottom: 0.35em;
+}
+
+/* Попап выбора: Вход/регистрация в личный кабинет */
+.popup--auth-choice {
+    background-color: #000;
+    border-radius: 12px;
+    padding: 32px 28px;
+    width: 1512px;
+    height: 794px;
+    max-width: 95vw;
+    max-height: 90vh;
+    box-sizing: border-box;
+}
+
+.popup--auth-choice .popup-content--auth-choice {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup--auth-choice .popup__title--auth {
+    color: #fff;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+.popup--auth-choice .auth-choice__buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popup--auth-choice .auth-choice__btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.popup--auth-choice .auth-choice__btn--primary,
+.popup--auth-choice .auth-choice__btn--secondary {
+    border: 2px solid #fff;
+}
+
+.popup--auth-choice .auth-choice__btn--primary:hover,
+.popup--auth-choice .auth-choice__btn--secondary:hover {
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+/* Попап регистрации — чёрная панель по макету */
+.popup--register {
+    background-color: #000;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.popup--register .popup-content {
+    position: relative;
+}
+
+.popup--register .popup__title {
+    color: #fff;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.popup--register .close {
+    color: rgba(255,255,255,0.8);
+}
+
+.popup--register .close:hover {
+    color: #fff;
+}
+
+.popup--register .form-group {
+    margin-bottom: 18px;
+}
+
+.popup--register .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.popup--register .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px dashed rgba(255,255,255,0.9);
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.popup--register .form-group input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.popup--register .popup__submit {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 32px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.popup--register .popup__submit:hover {
+    background-color: #c0c0c0;
+}
+
+.popup--register #registerResult .success-message,
+.popup--register #registerResult .error-message {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.popup--register #registerResult .success-message {
+    color: #0f0;
+    background-color: rgba(0,255,0,0.15);
+}
+
+.popup--register #registerResult .error-message {
+    color: #f66;
+    background-color: rgba(255,0,0,0.15);
+}
+
+/* Попап входа — в одном стиле с окном регистрации */
+.popup--login {
+    background-color: #000;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.popup--login .popup-content {
+    position: relative;
+}
+
+.popup--login .popup__title {
+    color: #fff;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.popup--login .close {
+    color: rgba(255,255,255,0.8);
+}
+
+.popup--login .close:hover {
+    color: #fff;
+}
+
+.popup--login .form-group {
+    margin-bottom: 18px;
+}
+
+.popup--login .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.popup--login .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px dashed rgba(255,255,255,0.9);
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.popup--login .form-group input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.popup--login .popup__submit {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 32px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.popup--login .popup__submit:hover {
+    background-color: #c0c0c0;
+}
+
+.popup--login #loginResult .success-message,
+.popup--login #loginResult .error-message {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.popup--login #loginResult .success-message {
+    color: #0f0;
+    background-color: rgba(0,255,0,0.15);
+}
+
+.popup--login #loginResult .error-message {
+    color: #f66;
+    background-color: rgba(255,0,0,0.15);
+}
+
+/* Контент попапа */
+.popup-content {
+    position: relative;
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Активное состояние попапа */
+.popup.active, .overlay.active {
+    display: block;
+}
+
+/* Стили для формы (остальные попапы) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0c0c0;
+}
+
+/* Сообщения об ошибках/успехе */
+.success-message {
+    color: green;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #d4edda;
+    border-radius: 4px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+}
