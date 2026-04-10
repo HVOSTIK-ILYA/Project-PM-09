@@ -55,7 +55,7 @@ header {
 /* Стили для тега <main> - главная часть страницы */
 .ekran_1{
     background-color: white;
-    
+    padding: 30px;
 }
 
 /* Заголовок (главная новость) - класс .text_1 */
@@ -71,6 +71,7 @@ header {
     border-right: 1px solid #000000;
     padding: 190px;
     align-items: center;
+    width: 100%;
 }
 .main__text_2 > .main__text_2_1,
 .main__text_2 > .sub_menu {
@@ -166,21 +167,23 @@ main button:hover {
 
 /* Верхняя строка с заголовком и картинкой */
 .ekran_2 {
-    background-image: url(images/Экран\ 4.png);
+    background-image: url("../images/Экран 4.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 30px;
 }
 
-.main__text_2 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствия HTML */
+.main__text_2 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствие HTML */
     display: flex; /* Включаем Flexbox для выравнивания элементов в ряд */ /* Размещаем заголовок слева, а картинку справа (space-between создает между ними максимальное расстояние) */
     align-items: center; /* Выравниваем заголовок и картинку по вертикали по центру (как на скриншоте) */
-    margin:  30px;/* Отступ снизу перед блоком с адресом */
+    margin: 0;
     border: solid #000000 1px;
     padding-left: 30px;
     padding-right: 30px;
     height: 750px;
     flex-grow: 1;
+    width: 100%;
 }
 
 /* Устанавливаем одинаковую ширину для двух основных частей внутри main__text_2 */
@@ -199,6 +202,10 @@ main button:hover {
     margin-bottom: 10px;
     font-size: 70px;
     color: #000000;
+}
+
+.ekran_3 .text_2 {
+    text-align: center;
 }
 .sub_menu {
     display: flex;
@@ -284,21 +291,23 @@ main button:hover {
 }
 
 .ekran_3{
-    background-image: url(images/Экран/5.png);
+    background-image: url("../images/Экран 5.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 30px;
 }
-.main__text_3 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствия HTML */
+.main__text_3 { /* В вашем HTML опечатка: используется класс "main_text_2" (с одним нижним подчеркиванием), но в CSS написано с двумя. Исправляем селектор для соответствие HTML */
     display: flex; /* Включаем Flexbox для выравнивания элементов в ряд */ /* Размещаем заголовок слева, а картинку справа (space-between создает между ними максимальное расстояние) */
     flex-direction: row-reverse;
     align-items: center; /* Выравниваем заголовок и картинку по вертикали по центру (как на скриншоте) */
-    margin: 30px;/* Отступ снизу перед блоком с адресом */
+    margin: 0;
     border: solid #000000 1px;
     padding-left: 30px;
     padding-right: 30px;
     height: 750px;
     flex-grow: 1;
+    width: 100%;
 }
 
 /* Устанавливаем одинаковую ширину для двух основных частей внутри main__text_2 */
@@ -320,18 +329,102 @@ main button:hover {
     
     /* Уменьшаем отступы в основном контенте */
     main {
-        padding: 0 20px; /* Убираем внутренние отступы по бокам до 20px */
+        padding: 0 12px; /* Убираем внутренние отступы по бокам до 12px */
+    }
+    
+    /* Первый экран: текст и картинка в колонку */
+    .main__text {
+        flex-direction: column;
+        gap: 24px;
+        padding: 28px 18px;
+        height: auto;
+        align-items: center;
+    }
+    .main__text .img_1 {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+    }
+    
+    /* Меню первого экрана: вертикальные кнопки во всю ширину */
+    .main__menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .main__menu button {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 18px;
     }
     
     /* Уменьшаем размер заголовка */
     .text_1 {
         font-size: 24px; /* С 32px уменьшаем до 24px */
+        width: auto;
     }
     
-    /* Кнопки занимают всю доступную ширину */
-    main button {
-        max-width: 100%; /* Убираем ограничение в 400px, кнопки растягиваются на всю ширину */
-        padding: 16px 24px; /* Немного уменьшаем внутренние отступы */
+    /* Второй и третий экраны: колонки в одну линию */
+    .main__text_2,
+    .main__text_3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding-left: 18px;
+        padding-right: 18px;
+        height: auto;
+    }
+    .main__text_2 > .main__text_2_1,
+    .main__text_2 > .sub_menu,
+    .main__text_3 > .main__text_2_1,
+    .main__text_3 > .sub_menu,
+    .main__text_2_1 {
+        width: 100%;
+        flex: none;
+    }
+    .main__text_2 .text_2,
+    .main__text_3 .text_2 {
+        font-size: 36px;
+        text-align: center;
+    }
+    
+    .sub__menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        height: auto;
+        width: 100%;
+    }
+    .column {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding-top: 18px;
+    }
+    .column_img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .input {
+        width: 100%;
+    }
+    
+    .button__main_type {
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .button__main_type button {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .ekran_1,
+    .ekran_2,
+    .ekran_3 {
+        padding: 20px;
     }
 }
 /* Затемнение фона */
